@@ -53,3 +53,11 @@ section {
 .resources__list {
     padding-left: 20px;
 }
+
+#animateBtn {
+  display: block;
+  margin: 24px auto 0;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
