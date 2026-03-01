@@ -13,25 +13,28 @@
 <body>
     <main class="page">
         <header>
-            <h1>HTML5 & CSS3</h1>
+            <button id="animateBtn" type="button">Start the Animation</button>
+            <h1 id="mainTitle">HTML5 & CSS3</h1>
         </header>
 
         <!-- About me portion -->
         <section class="about">
-            <img src="images/casting1.jpg"
-                 alt="Portrait photo of Rolando Barriga-Rojas"
-                 class="about__photo">
+            <img
+              id="profilePhoto"
+              src="images/casting1.jpg"
+              alt="Portrait photo of Rolando Barriga-Rojas"
+              class="about__photo">
 
             <p class="about__text">
                 Hi, I’m Rolando Barriga-Rojas. I’m a Computer Science, Computer Engineering, and Mathematics student.
-                I enjoy music, videogames, and always looking to learn new things. I spend a lot of time on arxiv! 
+                I enjoy music, videogames, and always looking to learn new things. I spend a lot of time on arXiv! 
             </p>
         </section>
 
         <!-- Reason for attending -->
         <section class="reason">
             <p>
-                Im taking this class because I want to be able to create a website for myself and research, recently I have seen a growing trend 
+                I'm taking this class because I want to be able to create a website for myself and research, recently I have seen a growing trend 
                 of researchers creating personal websites to share their work instead of posting something on github or arxiv. Aside from that 
                 I want to simply be proficient in HTML and CSS, I have some experience with it but would like to learn more. 
             </p>
@@ -73,5 +76,8 @@
             </ul>
         </section>
     </main>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script> 
 </body>
+
 </html>
