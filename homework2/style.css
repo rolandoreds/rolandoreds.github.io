@@ -83,7 +83,7 @@ div.sidebar-left a {
   font-weight: bold;
   text-transform: uppercase;
 
-  /* was 11px -> 11/16 = 0.6875rem */
+
   font-size: 0.6875rem;
 }
 
@@ -207,3 +207,4 @@ img, video, iframe {
 
   div#footer { width: 900px; }
 }
+
