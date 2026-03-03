@@ -3,28 +3,34 @@ $(function () {
   const $photo = $("#profilePhoto");
   const $btn = $("#animateBtn");
 
-  const originalFontSize = $title.css("font-size");
   const originalColor = $title.css("color");
 
-  $btn.on("click", function () {
+  //transform on text
+  $title.css({
+    display: "inline-block",
+    transform: "scale(1)"
+  });
 
+  $btn.on("click", function () {
     $btn.prop("disabled", true);
 
- 
+    // Add border around picture
     $photo.css("border", "4px solid #000");
 
-
+    // Change color, then revert 
     $title.css("color", "crimson");
     setTimeout(function () {
       $title.css("color", originalColor);
-    }, 900);
+    }, 1300); 
 
-    const currentPx = parseFloat(originalFontSize); // e.g., "32px" -> 32
-    const grownPx = (currentPx + 18).toString() + "px";
-
-    $title.animate({ fontSize: grownPx }, 600)
-          .animate({ fontSize: originalFontSize }, 600, function () {
-            $btn.prop("disabled", false);
-          });
+    // Animate 
+    $title
+      .animate({ opacity: 1 }, 600, function () {
+        $title.css("transform", "scale(1.25)");
+      })
+      .animate({ opacity: 1 }, 600, function () {
+        $title.css("transform", "scale(1)");
+        $btn.prop("disabled", false);
+      });
   });
 });
