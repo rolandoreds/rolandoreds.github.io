@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paizō - Products</title>
+  <meta name="description" content="Explore luxury educational toys from Paizō">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Paizō</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
+          <li class="nav-item"><a class="nav-link" href="extra.html">Extra</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container pt-5 mt-5">
+    <header class="text-center mb-4">
+      <h1>Our Products</h1>
+      <h3>Discover toys designed for curiosity and growth</h3>
+    </header>
+
+   <div class="accordion" id="toyAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#toyOne" aria-expanded="true" aria-controls="toyOne">
+        Ouránios Blocks
+      </button>
+    </h2>
+    <div id="toyOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#toyAccordion">
+      <div class="accordion-body">
+        <img src="images/ouranios-blocks.png" alt="Ouránios Blocks wooden toy set" class="img-fluid rounded mb-3">
+        <p>Ouránios Blocks is a premium wooden building set that helps children develop creativity, spatial reasoning, and fine motor skills through open-ended play.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toyTwo" aria-expanded="false" aria-controls="toyTwo">
+        Arktos Atelier Bear
+      </button>
+    </h2>
+    <div id="toyTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#toyAccordion">
+      <div class="accordion-body">
+        <img src="images/arktos-atelier-bear.png" alt="Arktos Atelier Bear plush toy" class="img-fluid rounded mb-3">
+        <p>Arktos Atelier Bear is a soft, handcrafted plush companion designed to bring comfort, imagination, and warmth to early childhood playtime.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toyThree" aria-expanded="false" aria-controls="toyThree">
+        Astera Puzzle Globe
+      </button>
+    </h2>
+    <div id="toyThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#toyAccordion">
+      <div class="accordion-body">
+        <img src="images/astera-puzzle-globe.png" alt="Astera Puzzle Globe educational toy" class="img-fluid rounded mb-3">
+        <p>Astera Puzzle Globe invites children to explore shapes, geography, and problem-solving through a refined and engaging learning experience.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+</body>
+</html>
