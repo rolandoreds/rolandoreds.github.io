@@ -2,153 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Homework 4 - Local Storage</title>
-  <meta name="description" content="Homework 4 using templates and local storage">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Homework 4 PWA page with background template selection and local storage.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 4 - PWA</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #222;
-    }
-
-    header {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 25px;
-      text-align: center;
-      border-bottom: 2px solid #ddd;
-    }
-
-    main {
-      max-width: 750px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-    }
-
-    h1 {
-      margin-top: 0;
-      color: #222;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    select,
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-
-    #greeting {
-      margin-top: 25px;
-      padding: 15px;
-      background-color: #ffffff;
-      border-left: 5px solid #ffc107;
-      font-size: 1.1rem;
-    }
-
-    .note {
-      margin-top: 25px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f7c948">
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     <h1>Homework 4</h1>
-    <p>Template Selection and Local Storage</p>
+    <p>Template Selection, Local Storage, and Basic PWA Features</p>
   </header>
 
-  <main>
-    <h2>Choose a Template</h2>
+  <main class="container">
+    <section class="card">
+      <h2>Progressive Web Application</h2>
 
-    <label for="templateSelect">Select a background template:</label>
-    <select id="templateSelect">
-      <option value="">Choose a template</option>
-      <option value="lightblue.jpg">Light Blue</option>
-      <option value="lightgold.jpg">Light Gold</option>
-    </select>
+      <p>
+        A Progressive Web Application, or PWA, is a web application that behaves more like an installed application. A basic PWA usually includes a web app manifest, an icon, HTTPS hosting, and a service worker. These features allow the browser to recognize the site as installable and make it possible for users to launch it from their desktop or home screen.
+      </p>
 
-    <label for="nameInput">Enter your name:</label>
-    <input type="text" id="nameInput" placeholder="Type your name here">
+      <p>
+        One of the most important characteristics of a PWA is reliability. A PWA can continue working even when the user is offline because a service worker can cache important files, such as the HTML page, CSS and JavaScript files, and images. This makes the application faster on later visits and allows the user to access the application offline instead of seeing a blank page. 
+      </p>
 
-    <p id="greeting">Hi, glad to see you here.</p>
+      <form>
+        <label for="templateSelect">Select a background template:</label>
+        <select id="templateSelect" name="templateSelect">
+          <option value="">Plain White</option>
+          <option value="lightblue.jpg">Light Blue</option>
+          <option value="lightgold.jpg">Light Gold</option>
+        </select>
 
-    <p class="note">
-      This page uses localStorage to save and retrieve the user's name.
-      After typing a name and clicking outside the input box, the value is saved locally in the browser.
-      The saved name is retrieved again if the page is closed and re-accessed.
-    </p>
+        <label for="nameInput">Enter your name:</label>
+        <input id="nameInput" name="nameInput" type="text" placeholder="Type your name here">
+
+        <p id="greeting" class="greeting">Hi, glad to see you here.</p>
+      </form>
+
+      <p class="note">
+        This page uses localStorage to save and retrieve the user's name. After typing a name and clicking outside the input box, the value is saved locally in the browser.Name will be saved even if the page is closed and reopened.
+      </p>
+    </section>
   </main>
 
-  <script>
-    const templateSelect = document.getElementById("templateSelect");
-    const nameInput = document.getElementById("nameInput");
-    const greeting = document.getElementById("greeting");
-
-    function applyTemplate(templateFile) {
-      if (templateFile) {
-        document.body.style.backgroundImage = "url('" + templateFile + "')";
-      } else {
-        document.body.style.backgroundImage = "none";
-      }
-    }
-
-    function updateGreeting(name) {
-      if (name) {
-        greeting.textContent = "Hi, " + name + ", glad to see you back.";
-      } else {
-        greeting.textContent = "Hi, glad to see you here.";
-      }
-    }
-
-    window.addEventListener("load", function () {
-      const savedName = localStorage.getItem("name");
-      const savedTemplate = localStorage.getItem("template");
-
-      if (savedName) {
-        nameInput.value = savedName;
-        updateGreeting(savedName);
-      }
-
-      if (savedTemplate) {
-        templateSelect.value = savedTemplate;
-        applyTemplate(savedTemplate);
-      }
-    });
-
-    nameInput.addEventListener("blur", function () {
-      const typedName = nameInput.value.trim();
-
-      localStorage.setItem("name", typedName);
-      updateGreeting(typedName);
-    });
-
-    templateSelect.addEventListener("change", function () {
-      const selectedTemplate = templateSelect.value;
-
-      localStorage.setItem("template", selectedTemplate);
-      applyTemplate(selectedTemplate);
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
