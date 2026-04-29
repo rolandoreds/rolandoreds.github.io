@@ -1,0 +1,22 @@
+{
+  "short_name": "HW4 PWA",
+  "name": "Homework 4 Progressive Web Application",
+  "description": "A basic Progressive Web Application with offline caching, background template selection, and localStorage.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f7c948",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
