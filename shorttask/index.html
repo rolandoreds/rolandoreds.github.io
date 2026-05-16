@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <title>Hybrid Application Technology Recommendation</title>
+
+  <meta name="description" content="A responsive manager-facing comparison report of Flutter, Ionic, and React Native for hybrid application development.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html">Hybrid Strategy Report</a>
+
+      <div class="nav-links">
+        <a href="#recommendation">Recommendation</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#decision">Decision</a>
+        <a href="#references">References</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="eyebrow">Prepared for Product and Engineering Managers</p>
+      <h1>Choosing the Right Hybrid Application Platform</h1>
+      <p class="hero-text">
+        Flutter, Ionic, and React Native can all reduce the cost of building for multiple platforms.
+        The better question is not which one is most popular. The better question is which one best
+        matches our product strategy, engineering talent, performance expectations, and long-term
+        maintenance risk.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary-button" href="#recommendation">View Recommendation</a>
+        <a class="button secondary-button" href="#comparison">Compare Platforms</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="recommendation" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Executive Recommendation</p>
+        <h2>Recommendation: React Native for most product teams, Flutter for premium custom interfaces, Ionic for web-first delivery.</h2>
+      </div>
+
+      <div class="recommendation-card">
+        <h3>Summary</h3>
+        <p>
+          If the company already has developers comfortable with JavaScript, TypeScript, and React,
+          <strong>React Native is the safest default recommendation</strong>. It gives the company
+          native mobile interfaces while preserving a familiar development model for web-trained teams.
+        </p>
+
+        <p>
+          If the company wants a highly polished, brand-controlled interface where the application should
+          look carefully designed across devices, <strong>Flutter becomes the strongest visual product
+          choice</strong>. Its widget-centered architecture gives design teams more control over the final
+          user experience.
+        </p>
+
+        <p>
+          If the company already has a strong web application and wants the fastest path, <strong>Ionic with Capacitor is the most cost-efficient option </strong>.
+          It is best when delivery speed and web compatibility matter more than the deepest native feel.
+        </p>
+      </div>
+    </section>
+
+    <section class="section strategy-grid" aria-label="Platform positioning cards">
+      <article class="platform-card">
+        <span class="platform-label">Best for native-product teams</span>
+        <h2>React Native</h2>
+        <p>
+          A strong fit when the company wants native mobile applications but wants to keep the engineering
+          team close to React, JavaScript, and TypeScript.
+        </p>
+        <ul>
+          <li>Useful when native mobile feel matters.</li>
+          <li>Lower learning curve for teams already using React.</li>
+        </ul>
+      </article>
+
+      <article class="platform-card featured-card">
+        <span class="platform-label">Best for premium custom UI</span>
+        <h2>Flutter</h2>
+        <p>
+          A strong fit when the company wants carefully controlled visuals, smooth interface behavior,
+          and a consistent product experience across platforms.
+        </p>
+        <ul>
+          <li>Excellent for design-heavy applications.</li>
+          <li>Strong cross-platform consistency.</li>
+          <li>Requires team investment in Dart and Flutter-specific patterns.</li>
+        </ul>
+      </article>
+
+      <article class="platform-card">
+        <span class="platform-label">Best for web-first teams</span>
+        <h2>Ionic</h2>
+        <p>
+          A strong fit when the company wants to turn web skills into mobile applications quickly,
+          especially when the same product may also exist as a browser-based application.
+        </p>
+        <ul>
+          <li>Good for internal tools, dashboards, and content-heavy apps.</li>
+          <li>Works well with Angular, React, Vue, or plain web technologies.</li>
+          <li>May feel less native for complex animations or intensive interfaces.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="comparison" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Side-by-Side Comparison</p>
+        <h2>How the three options compare for a real business decision</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>
+            Comparison of Flutter, Ionic, and React Native for hybrid application development.
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Decision Factor</th>
+              <th scope="col">Flutter</th>
+              <th scope="col">Ionic</th>
+              <th scope="col">React Native</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">Best Business Use</th>
+              <td>Premium consumer apps, brand-heavy interfaces, and products needing consistent visuals.</td>
+              <td>Web-first products, internal tools, dashboards, and applications needing fast deployment.</td>
+              <td>Native mobile apps built by teams already familiar with React and JavaScript.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Main Development Language</th>
+              <td>Dart.</td>
+              <td>HTML, CSS, JavaScript, and often Angular, React, or Vue.</td>
+              <td>JavaScript or TypeScript with React.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">User Interface Model</th>
+              <td>Uses Flutter widgets and its own rendering approach for consistent interface control.</td>
+              <td>Uses web components inside a native container through Capacitor.</td>
+              <td>Uses React components that render to native platform interface elements.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Performance Profile</th>
+              <td>Strong for smooth custom interfaces and animation-heavy experiences.</td>
+              <td>Good for standard apps, but complex native-like interactions may expose WebView limits.</td>
+              <td>Strong for mobile apps that need native interface behavior and platform integration.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Team Learning Curve</th>
+              <td>Medium to high if the team does not know Dart or Flutter patterns.</td>
+              <td>Low for web developers because it uses familiar web technologies.</td>
+              <td>Low to medium for React developers; higher if native platform debugging is new.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Long-Term Risk</th>
+              <td>Risk comes from needing Flutter-specific expertise and maintaining a separate skill stack.</td>
+              <td>Risk comes from relying on web performance inside mobile contexts.</td>
+              <td>Risk comes from managing native dependencies, upgrades, and platform-specific behavior.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Manager-Level Verdict</th>
+              <td>Choose Flutter when design quality and interface control are the strategic advantage.</td>
+              <td>Choose Ionic when cost, speed, and web reuse are the strategic advantage.</td>
+              <td>Choose React Native when native mobile quality and React-based development speed are both important.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="decision" class="section decision-section">
+      <div class="section-heading">
+        <p class="eyebrow">Decision Guide</p>
+        <h2>Which platform should the company choose?</h2>
+      </div>
+
+      <div class="decision-grid">
+        <article class="decision-card">
+          <h3>Choose React Native if...</h3>
+          <p>
+            The company wants a serious mobile application, needs native interface behavior,
+            and already has React or JavaScript developers. This is the most balanced recommendation
+            for a company trying to ship a professional product without building two fully separate
+            native codebases.
+          </p>
+        </article>
+
+        <article class="decision-card">
+          <h3>Choose Flutter if: </h3>
+          <p>
+            The company wants a product that feels visually distinctive. Flutter is the stronger
+            option when design consistency, custom interface motion, and polished presentation are
+            part of the business value.
+          </p>
+        </article>
+
+        <article class="decision-card">
+          <h3>Choose Ionic if: </h3>
+          <p>
+            The company already thinks like a web company. If the main goal is to reuse web code,
+            move quickly, and support browser-based and mobile experiences with one web-first approach,
+            Ionic is the practical choice.
+          </p>
+        </article>
+      </div>
+
+      <aside class="final-verdict" aria-label="Final recommendation">
+        <h3>Final Recommendation</h3>
+        <p>
+          For a general company decision, I would recommend <strong>React Native</strong> as the first
+          platform to evaluate. It gives the company a strong balance between native mobile quality,
+          hiring availability, and development speed. Flutter should be selected if the application’s
+          competitive advantage depends on a highly custom interface. Ionic should be selected if the
+          company’s priority is web reuse and fast delivery over maximum native polish.
+        </p>
+      </aside>
+    </section>
+
+    <section id="offline" class="section offline-note">
+      <h2>Offline Availability</h2>
+      <p>
+        This page includes a service worker. After the first successful visit, the browser can function as normal
+        even if the user is offline. 
+      </p>
+    </section>
+
+    <section id="references" class="section references-section">
+      <div class="section-heading">
+        <p class="eyebrow">Research References</p>
+        <h2>Sources used for this recommendation</h2>
+      </div>
+
+      <ul class="references-list">
+        <li>
+          <a href="https://docs.flutter.dev/resources/architectural-overview">
+            Flutter documentation: architectural overview
+          </a>
+          <span> — Official explanation of Flutter’s cross-platform architecture and interface model.</span>
+        </li>
+
+        <li>
+          <a href="https://docs.flutter.dev/platform-integration/web/faq">
+            Flutter documentation: web frequently asked questions
+          </a>
+          <span> — Official guidance related to Flutter’s web support and deployment considerations.</span>
+        </li>
+
+        <li>
+          <a href="https://reactnative.dev/docs/intro-react-native-components">
+            React Native documentation: native components introduction
+          </a>
+          <span> — Official explanation of how React Native components connect to native platform interfaces.</span>
+        </li>
+
+        <li>
+          <a href="https://reactnative.dev/architecture/overview">
+            React Native documentation: architecture overview
+          </a>
+          <span> — Official explanation of React Native’s current architecture direction.</span>
+        </li>
+
+        <li>
+          <a href="https://ionicframework.com/docs">
+            Ionic Framework documentation
+          </a>
+          <span> — Official documentation for Ionic’s web-based user interface framework.</span>
+        </li>
+
+        <li>
+          <a href="https://capacitorjs.com/docs">
+            Capacitor documentation: cross-platform native runtime
+          </a>
+          <span> — Official explanation of Capacitor as a native runtime for web applications.</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hybrid Application Technology Recommendation Report</p>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          console.log('Service worker registered. Scope is ' + registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Service worker registration failed: ' + error);
+        });
+    }
+  </script>
+</body>
+</html>
