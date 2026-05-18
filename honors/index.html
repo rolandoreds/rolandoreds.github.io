@@ -1,1 +1,546 @@
-{\rtf1}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>SecureLaunch - CIS 128 Honors Project</title>
+
+  <meta name="description" content="SecureLaunch is a mobile-first progressive web app and honors project that teaches practical web security, accessibility, offline support, and secure launch planning for modern web applications.">
+  <meta name="author" content="Rolando Barriga-Rojas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#050816">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand-mark" href="#top" aria-label="SecureLaunch home">
+        <span class="brand-icon" aria-hidden="true">SL</span>
+        <span class="brand-text">SecureLaunch</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="visually-hidden">Open navigation menu</span>
+      </button>
+
+      <ul class="nav-list" id="primary-navigation">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#threats">Threats</a></li>
+        <li><a href="#build">Build</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#research">Research</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section section-panel" aria-labelledby="hero-title">
+      <div class="hero-gradient" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">CIS 128 Honors Project · Progressive Web Application · Web Security</p>
+
+        <h1 id="hero-title">A secure web launch should feel deliberate, not accidental.</h1>
+
+        <p class="hero-lede">
+          SecureLaunch is a mobile-first guide for teams preparing to publish a modern web application. It turns security, accessibility, offline readiness, and responsible front-end decisions into a practical launch system.
+        </p>
+
+        <div class="hero-actions" aria-label="Primary page actions">
+          <a class="button button-primary" href="#framework">Explore the framework</a>
+          <a class="button button-secondary" href="#checklist">Open launch checklist</a>
+        </div>
+
+        <dl class="hero-metrics" aria-label="Project highlights">
+          <div>
+            <dt>4</dt>
+            <dd>Launch phases</dd>
+          </div>
+
+          <div>
+            <dt>10</dt>
+            <dd>OWASP risk areas considered</dd>
+          </div>
+
+          <div>
+            <dt>Offline</dt>
+            <dd>Designed for cached access</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section-panel intro-grid" id="problem" aria-labelledby="problem-title">
+      <div class="section-copy">
+        <p class="eyebrow">The problem</p>
+
+        <h2 id="problem-title">Most web projects treat security as decoration after the interface is done.</h2>
+
+        <p>
+          That habit is dangerous. A page can look polished and still be fragile: weak authentication logic, exposed third-party scripts, missing security headers, poor input handling, inaccessible controls, or an offline experience that collapses into a blank screen.
+        </p>
+
+        <p>
+          SecureLaunch argues for a different habit: design the user experience and the security model together. The question is not only “Does the site work?” The better question is “Can this site be trusted when real users, real devices, and real network failures are involved?”
+        </p>
+      </div>
+
+      <aside class="glass-card argument-card" aria-labelledby="argument-title">
+        <h3 id="argument-title">Core thesis</h3>
+
+        <p>
+          A modern web application is not ready to launch until it is accessible and defensible against common web risks.
+        </p>
+
+        <a class="text-link" href="#research">See research foundation</a>
+      </aside>
+    </section>
+
+    <section class="section-panel" id="framework" aria-labelledby="framework-title">
+      <div class="section-heading centered">
+        <p class="eyebrow">The SecureLaunch framework</p>
+
+        <h2 id="framework-title">A four-part system for deciding whether a web app is launch-ready.</h2>
+
+        <p>
+          The framework is written for managers and developers. Managers get decision language. Developers get implementation priorities.
+        </p>
+      </div>
+
+      <div class="phase-grid" aria-label="SecureLaunch framework phases">
+        <article class="phase-card">
+          <span class="phase-number" aria-hidden="true">01</span>
+          <h3>Define the surface</h3>
+
+          <p>
+            Identify the pages, forms, scripts, storage features, APIs, and third-party dependencies that shape the application’s attack surface.
+          </p>
+
+          <ul class="clean-list">
+            <li>List user inputs</li>
+            <li>List external scripts</li>
+            <li>List stored data</li>
+          </ul>
+        </article>
+
+        <article class="phase-card">
+          <span class="phase-number" aria-hidden="true">02</span>
+          <h3>Reduce preventable risk</h3>
+
+          <p>
+            Apply core web security controls before launch: HTTPS, secure headers, careful dependency choices, input validation, and safer client-side storage habits.
+          </p>
+
+          <ul class="clean-list">
+            <li>Prefer HTTPS</li>
+            <li>Use defense-in-depth</li>
+            <li>Minimize unnecessary dependencies</li>
+          </ul>
+        </article>
+
+        <article class="phase-card">
+          <span class="phase-number" aria-hidden="true">03</span>
+          <h3>Design for failure</h3>
+
+          <p>
+            Treat poor network conditions as normal. A service worker should cache the important shell of the application so the user is not abandoned offline.
+          </p>
+
+          <ul class="clean-list">
+            <li>Cache core assets</li>
+            <li>Show fallback content</li>
+            <li>Test offline behavior</li>
+          </ul>
+        </article>
+
+        <article class="phase-card">
+          <span class="phase-number" aria-hidden="true">04</span>
+          <h3>Verify before publishing</h3>
+
+          <p>
+            Use a final checklist to test accessibility, responsiveness, offline access, browser errors, valid HTML, valid CSS, and security assumptions.
+          </p>
+
+          <ul class="clean-list">
+            <li>Validate markup</li>
+            <li>Inspect DevTools</li>
+            <li>Document remaining risks</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-panel split-section" id="threats" aria-labelledby="threats-title">
+      <div class="section-copy">
+        <p class="eyebrow">Threat model</p>
+
+        <h2 id="threats-title">Security decisions become clearer when risks are grouped by how they damage trust.</h2>
+
+        <p>
+          This project does not try to cover every possible vulnerability. Instead, it focuses on the web risks most relevant to small and medium front-end applications: broken access control, injection, insecure design, vulnerable components, weak configuration, and unsafe data handling.
+        </p>
+
+        <p>
+          The goal is practical judgment. A developer should be able to look at a feature and ask: What could be abused? What data is involved? What protection belongs in the browser, and what protection belongs on the server?
+        </p>
+      </div>
+
+      <div class="threat-stack" aria-label="Security risk categories">
+        <article class="risk-card">
+          <h3>Access control</h3>
+          <p>Can users reach pages, data, or actions they should not be able to access?</p>
+        </article>
+
+        <article class="risk-card">
+          <h3>Injection</h3>
+          <p>Can untrusted input change how a query, command, page, or script behaves?</p>
+        </article>
+
+        <article class="risk-card">
+          <h3>Configuration</h3>
+          <p>Are headers, dependencies, errors, and deployment settings exposing avoidable weaknesses?</p>
+        </article>
+
+        <article class="risk-card">
+          <h3>Client-side storage</h3>
+          <p>Is sensitive information being stored in places that are too easy to inspect or misuse?</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-panel" id="build" aria-labelledby="build-title">
+      <div class="section-heading centered">
+        <p class="eyebrow">Build plan</p>
+
+        <h2 id="build-title">The application itself demonstrates the ideas it teaches.</h2>
+
+        <p>
+          SecureLaunch is not only a written report. It is a working web application with responsive design, accessibility-aware structure, offline support, and interactive learning tools.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">↻</div>
+          <h3>Offline-first shell</h3>
+
+          <p>
+            The service worker will cache this application’s core files so that the guide remains available even when the browser is placed into offline mode.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">◇</div>
+          <h3>Responsive presentation</h3>
+
+          <p>
+            The layout is designed to work as a polished desktop presentation and as a readable mobile guide.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✓</div>
+          <h3>Interactive checklist</h3>
+
+          <p>
+            Users can walk through a launch-readiness checklist and see their progress as they complete security, accessibility, and PWA tasks.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌁</div>
+          <h3>Accessible research links</h3>
+
+          <p>
+            References use meaningful link text instead of exposed raw URLs so the page remains usable for screen readers and printed review.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-panel interactive-panel" id="checklist" aria-labelledby="checklist-title">
+      <div class="section-heading">
+        <p class="eyebrow">Launch checklist</p>
+
+        <h2 id="checklist-title">A practical readiness test before a site goes live.</h2>
+
+        <p>
+          This section will become interactive in the JavaScript file. For now, the HTML gives us the correct structure, labels, and accessible controls.
+        </p>
+      </div>
+
+      <div class="checklist-layout">
+        <aside class="progress-card" aria-labelledby="progress-title">
+          <h3 id="progress-title">Readiness score</h3>
+
+          <p class="score-display">
+            <span id="score-value">0</span><span aria-hidden="true">%</span>
+          </p>
+
+          <p id="score-message">
+            Start checking items to measure launch readiness.
+          </p>
+
+          <button class="button button-secondary" type="button" id="reset-checklist">
+            Reset checklist
+          </button>
+        </aside>
+
+        <form class="checklist-form" aria-label="Secure launch checklist">
+          <fieldset>
+            <legend>Security controls</legend>
+
+            <label class="check-item" for="check-https">
+              <input type="checkbox" id="check-https" name="launch-checklist" value="https">
+              <span>Application is served over HTTPS.</span>
+            </label>
+
+            <label class="check-item" for="check-inputs">
+              <input type="checkbox" id="check-inputs" name="launch-checklist" value="inputs">
+              <span>User input is validated and handled safely.</span>
+            </label>
+
+            <label class="check-item" for="check-dependencies">
+              <input type="checkbox" id="check-dependencies" name="launch-checklist" value="dependencies">
+              <span>External scripts and dependencies are reviewed before launch.</span>
+            </label>
+
+            <label class="check-item" for="check-headers">
+              <input type="checkbox" id="check-headers" name="launch-checklist" value="headers">
+              <span>Security headers are planned for the production server.</span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Accessibility and interface</legend>
+
+            <label class="check-item" for="check-semantic">
+              <input type="checkbox" id="check-semantic" name="launch-checklist" value="semantic">
+              <span>Page uses semantic HTML landmarks, headings, and labels.</span>
+            </label>
+
+            <label class="check-item" for="check-keyboard">
+              <input type="checkbox" id="check-keyboard" name="launch-checklist" value="keyboard">
+              <span>Navigation and controls work without a mouse.</span>
+            </label>
+
+            <label class="check-item" for="check-contrast">
+              <input type="checkbox" id="check-contrast" name="launch-checklist" value="contrast">
+              <span>Text contrast is readable on desktop and mobile screens.</span>
+            </label>
+
+            <label class="check-item" for="check-responsive">
+              <input type="checkbox" id="check-responsive" name="launch-checklist" value="responsive">
+              <span>Layout is tested on mobile, tablet, and desktop widths.</span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>PWA and offline behavior</legend>
+
+            <label class="check-item" for="check-service-worker">
+              <input type="checkbox" id="check-service-worker" name="launch-checklist" value="service-worker">
+              <span>Service worker is registered without console errors.</span>
+            </label>
+
+            <label class="check-item" for="check-cache">
+              <input type="checkbox" id="check-cache" name="launch-checklist" value="cache">
+              <span>Core HTML, CSS, JavaScript, and icon files are cached.</span>
+            </label>
+
+            <label class="check-item" for="check-offline">
+              <input type="checkbox" id="check-offline" name="launch-checklist" value="offline">
+              <span>Application still loads when tested in offline mode.</span>
+            </label>
+
+            <label class="check-item" for="check-manifest">
+              <input type="checkbox" id="check-manifest" name="launch-checklist" value="manifest">
+              <span>Manifest file includes name, short name, icons, theme color, and start URL.</span>
+            </label>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-panel" id="secure-patterns" aria-labelledby="patterns-title">
+      <div class="section-heading centered">
+        <p class="eyebrow">Implementation guide</p>
+
+        <h2 id="patterns-title">Security patterns explained without hiding behind jargon.</h2>
+
+        <p>
+          Each pattern below connects a technical control to the user trust problem it is meant to solve.
+        </p>
+      </div>
+
+      <div class="accordion-list">
+        <details class="info-disclosure">
+          <summary>
+            <span>HTTPS and HSTS</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="disclosure-content">
+            <p>
+              HTTPS protects data in transit. HTTP Strict Transport Security tells browsers to keep using HTTPS for future requests. On GitHub Pages, HTTPS is available, but true HSTS policy is usually controlled by server or hosting configuration.
+            </p>
+          </div>
+        </details>
+
+        <details class="info-disclosure">
+          <summary>
+            <span>Content Security Policy</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="disclosure-content">
+            <p>
+              A Content Security Policy limits which scripts, styles, images, and other resources the browser is allowed to load. It helps reduce damage from injected or unauthorized resources.
+            </p>
+          </div>
+        </details>
+
+        <details class="info-disclosure">
+          <summary>
+            <span>Subresource Integrity</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="disclosure-content">
+            <p>
+              Subresource Integrity lets the browser verify that an external file has not changed unexpectedly. It is most relevant when a project depends on scripts or styles from a third-party content delivery network.
+            </p>
+          </div>
+        </details>
+
+        <details class="info-disclosure">
+          <summary>
+            <span>Local storage caution</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="disclosure-content">
+            <p>
+              Local storage can preserve simple user preferences, but it should not be treated like a secure vault. Sensitive data should not be stored there because browser storage is easy to inspect from developer tools.
+            </p>
+          </div>
+        </details>
+
+        <details class="info-disclosure">
+          <summary>
+            <span>Accessible interaction</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="disclosure-content">
+            <p>
+              A secure application still fails users if they cannot operate it. Buttons need labels, headings need order, links need meaningful text, and important content should remain usable with keyboard navigation.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-panel research-section" id="research" aria-labelledby="research-title">
+      <div class="section-heading">
+        <p class="eyebrow">Research foundation</p>
+
+        <h2 id="research-title">Primary sources guiding the project.</h2>
+
+        <p>
+          These references are written with meaningful link text for accessibility. The full MLA-style bibliography will be expanded in the research paper.
+        </p>
+      </div>
+
+      <div class="reference-grid">
+        <article class="reference-card">
+          <h3>OWASP Top Ten</h3>
+
+          <p>
+            Used to frame common web application risks and explain why secure design must happen before deployment.
+          </p>
+
+          <a class="text-link" href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">
+            Read the OWASP Top Ten project
+          </a>
+        </article>
+
+        <article class="reference-card">
+          <h3>MDN Service Worker API</h3>
+
+          <p>
+            Used to guide the offline-first architecture and service worker registration model.
+          </p>
+
+          <a class="text-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener noreferrer">
+            Read MDN’s Service Worker API documentation
+          </a>
+        </article>
+
+        <article class="reference-card">
+          <h3>MDN Progressive Web Apps</h3>
+
+          <p>
+            Used to support the PWA structure, offline operation, and manifest planning.
+          </p>
+
+          <a class="text-link" href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank" rel="noopener noreferrer">
+            Read MDN’s Progressive Web Apps guide
+          </a>
+        </article>
+
+        <article class="reference-card">
+          <h3>W3C Web Accessibility Initiative</h3>
+
+          <p>
+            Used to keep the project aligned with accessible structure, readable content, and usable controls.
+          </p>
+
+          <a class="text-link" href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">
+            Read the W3C WCAG overview
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-panel closing-section" aria-labelledby="closing-title">
+      <p class="eyebrow">Final position</p>
+
+      <h2 id="closing-title">SecureLaunch treats launch readiness as a product decision, not a technical afterthought.</h2>
+
+      <p>
+        A good interface invites the user in. A secure interface earns the right to keep them there. This project connects both standards: a web application should be elegant, fast, accessible, and prepared for failure before it asks for trust.
+      </p>
+
+      <a class="button button-primary" href="#top">Return to top</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <p class="footer-title">SecureLaunch</p>
+      <p>CIS 128 Honors Project by Rolando Barriga-Rojas.</p>
+    </div>
+
+    <p>
+      Built as a responsive, offline-capable educational web application.
+    </p>
+  </footer>
+</body>
+</html>
