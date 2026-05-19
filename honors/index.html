@@ -17,21 +17,21 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav">
       <a class="brand" href="#top" aria-label="SecureLaunch home">
         <span class="brand-icon">SL</span>
         <span class="brand-text">SecureLaunch</span>
       </a>
 
-      <div class="nav-links" aria-label="Page sections">
+      <nav class="nav-links" aria-label="Page sections">
         <a href="#problem">Problem</a>
         <a href="#framework">Framework</a>
         <a href="#threats">Threats</a>
         <a href="#build">Build</a>
         <a href="#checklist">Checklist</a>
         <a href="#research">Research</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content">
@@ -47,26 +47,26 @@
           practical launch system.
         </p>
 
-        <div class="hero-actions" aria-label="Primary actions">
+        <div class="hero-actions">
           <a class="button button-primary" href="#framework">Explore the framework</a>
           <a class="button button-secondary" href="#checklist">Open launch checklist</a>
         </div>
 
-        <div class="hero-metrics" aria-label="Project summary">
-          <article>
+        <div class="hero-metrics">
+          <div class="metric-card">
             <strong>4</strong>
             <span>launch phases</span>
-          </article>
+          </div>
 
-          <article>
+          <div class="metric-card">
             <strong>10</strong>
             <span>OWASP risk areas considered</span>
-          </article>
+          </div>
 
-          <article>
+          <div class="metric-card">
             <strong>Offline</strong>
             <span>designed for cached access</span>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -160,7 +160,9 @@
           </p>
         </div>
 
-        <div class="console-panel" aria-label="Security risk dashboard">
+        <section class="console-panel" aria-labelledby="risk-dashboard-title">
+          <h3 id="risk-dashboard-title" class="sr-only">Security risk dashboard</h3>
+
           <div class="panel-topline">
             <span>Launch risk monitor</span>
             <span class="status-dot">Live review</span>
@@ -191,10 +193,12 @@
               <p>Cache core pages, CSS, JavaScript, manifest, and icons.</p>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
-      <div class="accordion-group" aria-label="Expandable threat explanations">
+      <section class="accordion-group" aria-labelledby="threat-explanations-title">
+        <h3 id="threat-explanations-title" class="sr-only">Expandable threat explanations</h3>
+
         <details>
           <summary>Broken access control</summary>
           <p>
@@ -218,7 +222,7 @@
             and safe handling before the data is displayed or sent.
           </p>
         </details>
-      </div>
+      </section>
     </section>
 
     <section class="section section-light" id="build" aria-labelledby="build-title">
@@ -309,7 +313,7 @@
 
         <div class="references">
           <p>
-           These sources serve as a strong foundation 
+            These sources serve as a strong foundation.
           </p>
 
           <ul>
