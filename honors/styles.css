@@ -462,7 +462,7 @@ input:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.15rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid var(--line);
   color: rgba(245, 245, 247, 0.78);
   font-size: 0.78rem;
